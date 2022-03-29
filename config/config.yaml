@@ -1,0 +1,30 @@
+server:
+  http_port: 8080
+  log_level: DEBUG
+  run_env: PROD
+service:
+  user_ads_domain: http://new-user-ads-api
+  ad_listing_domain: https://gateway.chotot.org/v2/public/ad-listing
+  spine_domain: http://10.60.3.47:5656
+  access_trade_domain: https://api.accesstrade.vn
+  schema_registry_domain: http://schema.chotot.org
+mongodb:
+  connection_string: mongodb://10.60.3.126:27017
+  pool_size: 20
+kafka_blocketdb:
+  brokers: 10.60.3.120,10.60.3.121,10.60.3.122
+  consumer_group: affiliate_first_aa1
+  topic_ads: blocketdb.public.ads
+  topic_action_states: blocketdb.public.action_states
+  init_offset: none
+kafka_affiliate:
+  brokers: 10.60.3.186:9092,10.60.3.187:9092,10.60.3.188:9092,10.60.3.189:9092
+  consumer_group: affiliate_v002
+  topic_ads: affiliate.ads
+  init_offset: none
+affiliate_campaign:
+  enable: true
+  category: 5010,5020,5030,5040,5050,5060,5070,5080,5090,14010,14020,14030,14040,14050,14060,14070,14080,14090,14110
+api_key:
+  web: 82x881f8eaRHMgkGcXyKlAqyVgvx3Ig7
+  mobile: 805rdZYnLdtkL1ECG1owFMb3KjEkgFbc
